@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import { Text, StyleSheet, View, Image, Dimensions, TextInput, CheckBox  } from "react-native";
+import { Text, StyleSheet, View, Image, Dimensions, TextInput, CheckBox, TouchableOpacity } from "react-native";
 import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
 import { FontAwesome } from '@expo/vector-icons';
 
-const dim = Dimensions.get('window').width*0.3;
+const dim = Dimensions.get('window').width*0.2;
 
 
 export default function ScreenTwo({navigation}){
@@ -25,9 +25,9 @@ export default function ScreenTwo({navigation}){
                         source={require('../img/logo.png')}
                     />
                     <View style={styles.userView}>
-                        <FontAwesome name="user-circle" size={dim*0.9} color="black" />
+                        <FontAwesome name="user-circle" size={dim*0.85} color="black" />
                     </View>
-                    <Text style={styles.labelText}>USER NAME</Text>
+                    <Text style={styles.labelTextUser}>USER NAME</Text>
                     <TextInput
                         style={styles.inputUser}
                         value={user} 
@@ -35,7 +35,7 @@ export default function ScreenTwo({navigation}){
                         textAlign={'center'}
                         editable={true}
                     />
-                    <Text style={styles.labelText}>PASSWORD</Text>
+                    <Text style={styles.labelTextPass}>PASSWORD</Text>
                     <TextInput
                         style={styles.inputPass}
                         value={pass} 
@@ -54,6 +54,26 @@ export default function ScreenTwo({navigation}){
                             SHOW PASSWORD
                         </Text>
                     </View>
+                    <TouchableOpacity
+                        style={styles.loginBtu}
+                        onPress={() => {navigation.navigate('Account')}}
+                    >
+                        <Text style={{fontSize:15}}>Log In</Text>
+                    </TouchableOpacity>
+                    <View style={styles.lastView}>
+                        <TouchableOpacity
+                            style={styles.btu}
+                            onPress={() => {navigation.navigate('Sign')}}
+                        >
+                            <Text style={{fontSize:15,textAlign:'center'}}>Sign Up</Text>
+                        </TouchableOpacity>
+                        <TouchableOpacity
+                            style={styles.btu}
+                            onPress={() => {navigation.navigate('Forgot')}}
+                        >
+                            <Text style={{fontSize:15,textAlign:'center'}}>Forgot Password</Text>
+                        </TouchableOpacity>
+                    </View>
                 </View>
             </SafeAreaView>
         </SafeAreaProvider>
@@ -63,16 +83,18 @@ export default function ScreenTwo({navigation}){
 const styles = StyleSheet.create({
     screen: {
         height:'100%',
-        justifyContent: 'center',
+        justifyContent:'flex-start',
         alignItems: 'center',
         backgroundColor:'#082032'
     },
     image:{
         height:100,
         width:100,
-        opacity:1
+        opacity:1,
+        marginTop:50,
     },
     userView:{
+        marginTop:40,
         height:dim,
         width:dim,
         borderRadius:dim*0.5,
@@ -82,9 +104,11 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         backgroundColor:'#fff'
     },
-    labelText: {
-        fontSize:32,
-        color:'#fff'
+    labelTextUser: {
+        marginTop:30,
+        fontSize:25,
+        color:'#fff',
+        marginBottom:5
     },
     inputUser: {
         height: 40,
@@ -94,6 +118,12 @@ const styles = StyleSheet.create({
         color: 'black',
         width:'80%'
     },
+    labelTextPass: {
+        marginTop:10,
+        fontSize:25,
+        color:'#fff',
+        marginBottom:5
+    },
     inputPass: {
         height: 40,
         padding: 10,
@@ -102,18 +132,46 @@ const styles = StyleSheet.create({
         borderRadius: 20,
         backgroundColor: '#FFC947',
         color: 'black',
-        width:'80%'
+        width:'80%',
+        marginBottom:10
     },
     boxView:{
         flexDirection: 'row',
-        justifyContent:'center'
+        justifyContent:'center',
+        alignItems:'center',
+        marginBottom:10
     },
     checkbox: {
         marginRight:10
     },
     boxText:{
-        fontSize: 20,
+        fontSize: 15,
         color:'#fff',
         marginRight:10
+    },
+    loginBtu:{
+        height: 40,
+        padding: 10,
+        paddingLeft:30,
+        paddingRight:30,
+        borderRadius: 20,
+        justifyContent:'center',
+        backgroundColor: '#FFC947',
+        marginBottom:20
+    },
+    lastView:{
+        flexDirection: 'row',
+        width:'90%',
+        justifyContent:'space-between',
+        alignItems:'center',
+        marginTop:10,
+    },
+    btu:{
+        height: 40,
+        padding: 10,
+        width:'45%',
+        borderRadius: 20,
+        justifyContent:'center',
+        backgroundColor: '#FFC947',
     }
 });

@@ -5,6 +5,9 @@ import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import ScreenOne from './Screens/ScreenOne';
 import ScreenTwo from './Screens/ScreenTwo';
+import ScreenThree from './Screens/ScreenThree';
+import ScreenFour from './Screens/ScreenFour';
+import ScreenFive from './Screens/ScreenFive';
 
 const Stack = createStackNavigator()
 
@@ -18,6 +21,9 @@ export default function App() {
       >
         <Stack.Screen name="Logo" component={ScreenOne}/>
         <Stack.Screen name="Login" component={ScreenTwo}/>
+        <Stack.Screen name="Account" component={ScreenThree}/>
+        <Stack.Screen name="Sign" component={ScreenFour}/>
+        <Stack.Screen name="Forgot" component={ScreenFive}/>
       </Stack.Navigator>
     </NavigationContainer>
   );

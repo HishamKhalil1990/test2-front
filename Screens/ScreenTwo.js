@@ -91,10 +91,10 @@ const styles = StyleSheet.create({
         height:100,
         width:100,
         opacity:1,
-        marginTop:50,
+        marginTop:70,
     },
     userView:{
-        marginTop:40,
+        marginTop:35,
         height:dim,
         width:dim,
         borderRadius:dim*0.5,
@@ -106,7 +106,7 @@ const styles = StyleSheet.create({
     },
     labelTextUser: {
         marginTop:30,
-        fontSize:25,
+        fontSize:23,
         color:'#fff',
         marginBottom:5
     },
@@ -120,7 +120,7 @@ const styles = StyleSheet.create({
     },
     labelTextPass: {
         marginTop:10,
-        fontSize:25,
+        fontSize:23,
         color:'#fff',
         marginBottom:5
     },

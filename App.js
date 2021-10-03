@@ -8,6 +8,8 @@ import ScreenTwo from './Screens/ScreenTwo';
 import ScreenThree from './Screens/ScreenThree';
 import ScreenFour from './Screens/ScreenFour';
 import ScreenFive from './Screens/ScreenFive';
+import ScreenSix from './Screens/ScreenSix';
+import ScreenSeven from './Screens/ScreenSeven';
 
 const Stack = createStackNavigator()
 
@@ -24,6 +26,8 @@ export default function App() {
         <Stack.Screen name="Account" component={ScreenThree}/>
         <Stack.Screen name="Sign" component={ScreenFour}/>
         <Stack.Screen name="Forgot" component={ScreenFive}/>
+        <Stack.Screen name="Reset" component={ScreenSix}/>
+        <Stack.Screen name="Detail" component={ScreenSeven}/>
       </Stack.Navigator>
     </NavigationContainer>
   );

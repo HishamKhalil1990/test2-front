@@ -1,5 +1,5 @@
 import React from "react";
-import { Text, StyleSheet, View, Image, TouchableOpacity } from "react-native";
+import {  StyleSheet, View, Image, TouchableOpacity } from "react-native";
 import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
 
 export default function ScreenOne({navigation}){
@@ -29,8 +29,6 @@ const styles = StyleSheet.create({
         backgroundColor:'#082032'
     },
     image:{
-        height:100,
-        width:100,
         opacity:1
     }
 });

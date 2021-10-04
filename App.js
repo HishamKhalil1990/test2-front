@@ -1,6 +1,6 @@
 import 'react-native-gesture-handler'
 import { NavigationContainer} from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
+import { createStackNavigator, CardStyleInterpolators } from '@react-navigation/stack';
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import ScreenOne from './Screens/ScreenOne';
@@ -18,16 +18,48 @@ export default function App() {
     <NavigationContainer>
       <Stack.Navigator
         screenOptions={{
-          headerShown:false
+          headerShown:false,
+          gestureEnabled:true,
         }}
       >
-        <Stack.Screen name="Logo" component={ScreenOne}/>
-        <Stack.Screen name="Login" component={ScreenTwo}/>
-        <Stack.Screen name="Account" component={ScreenThree}/>
-        <Stack.Screen name="Sign" component={ScreenFour}/>
+        <Stack.Screen 
+          name="Logo" 
+          component={ScreenOne}
+        />
+        <Stack.Screen 
+          options={{
+            gestureDirection:'horizontal-inverted',
+            cardStyleInterpolator:CardStyleInterpolators.forHorizontalIOS
+          }}
+          name="Login" 
+          component={ScreenTwo}
+        />
+        <Stack.Screen 
+          options={{
+            gestureDirection:'horizontal-inverted',
+            cardStyleInterpolator:CardStyleInterpolators.forHorizontalIOS
+          }}
+          name="Account" 
+          component={ScreenThree}
+        />
+        <Stack.Screen
+          options={{
+            gestureDirection:'vertical',
+            cardStyleInterpolator:CardStyleInterpolators.forVerticalIOS
+          }} 
+        name="Sign" 
+        component={ScreenFour}
+        />
         <Stack.Screen name="Forgot" component={ScreenFive}/>
         <Stack.Screen name="Reset" component={ScreenSix}/>
-        <Stack.Screen name="Detail" component={ScreenSeven}/>
+        <Stack.Screen
+          options={{
+            gestureDirection:'horizontal-inverted',
+            cardStyleInterpolator:CardStyleInterpolators.forHorizontalIOS
+          }} 
+          name="Detail" 
+          component={ScreenSeven}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );

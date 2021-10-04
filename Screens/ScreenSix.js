@@ -5,7 +5,7 @@ import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
 export default function ScreenSix({navigation}){
 
     useEffect(() =>{
-        setTimeout(()=>{navigation.navigate('Logo')},2000)
+        setTimeout(()=>{navigation.navigate('Logo')},1000)
     },[])
 
     return(
